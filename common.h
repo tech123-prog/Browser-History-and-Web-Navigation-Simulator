@@ -7,31 +7,32 @@
 #include <queue>
 #include <unordered_map>
 #include <ctime>
+#include <sstream>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
-struct Page
-{
+// Node for the browsing history
+struct Page {
     string url;
     string category;
+
     time_t startTime;
     int duration;
 
     Page* prev;
     Page* next;
+
+    Page(string website, string type) {
+        url = website;
+        category = type;
+        startTime = time(nullptr);
+        duration = 0;
+
+        prev = nullptr;
+        next = nullptr;
+    }
 };
-
-extern Page* head;
-extern Page* tail;
-extern Page* currentPage;
-
-extern stack<Page*> backStack;
-extern stack<Page*> forwardStack;
-
-extern queue<string> recentWebsites;
-
-extern unordered_map<string, string> websiteCategory;
-extern unordered_map<string, int> visitFrequency;
-extern unordered_map<string, int> timeLimit;
 
 #endif

@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser History and Web Navigation Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Browser History and Web Navigation Simulator</h1>
+
+        <div class="browser">
+            <input type="text" id="url" placeholder="Enter website URL">
+
+            <select id="category">
+                <option>Education</option>
+                <option>Work</option>
+                <option>Social</option>
+                <option>Entertainment</option>
+                <option>Shopping</option>
+                <option>News</option>
+                <option>Other</option>
+            </select>
+
+            <button onclick="visit()">Visit</button>
+            <button onclick="goBack()">Back</button>
+            <button onclick="goForward()">Forward</button>
+        </div>
+
+        <div class="card">
+            <h2>Current Website</h2>
+            <p id="current">No website visited yet.</p>
+        </div>
+
+        <div class="card">
+            <h2>Recent Websites (Queue)</h2>
+            <ul id="recent"></ul>
+        </div>
+
+        <div class="card">
+            <h2>Visit Frequency (Hash Map)</h2>
+            <ul id="visits"></ul>
+        </div>
+
+        <div class="card">
+            <h2>Category Distribution</h2>
+            <ul id="categories"></ul>
+        </div>
+
+        <div class="card">
+            <h2>Search Website</h2>
+            <input type="text" id="keyword" placeholder="Enter keyword">
+            <button onclick="searchWebsite()">Search</button>
+            <ul id="search-results"></ul>
+        </div>
+
+        <div class="card">
+            <h2>Website Time Limit</h2>
+            <input type="text" id="limit-url" placeholder="Website URL">
+            <input type="number" id="minutes" placeholder="Minutes" min="1">
+            <button onclick="setLimit()">Set Limit</button>
+            <p id="limit-result"></p>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
